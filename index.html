@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <style>
+.coffeeFade {
+    -webkit-animation-name: kfCoffee; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 4s; /* Chrome, Safari, Opera */
+    animation-name: kfCoffee;
+    animation-duration: 180s;
+    animation-iteration-count: 1;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes kfCoffee {
+    
+    from {opacity: 0;}
+    to {opacity: 1; width: 100px; height:100px;}
+}
+
+/* Standard syntax */
+@keyframes kfCoffee {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+      </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="http://rawnpm.getify.io/asynquence/latest/asq.js"></script>
+    <script src="http://rawnpm.getify.io/asynquence-contrib/latest/contrib.js"></script>
+    <title>
+      Coffee / Tea Timer!
+    </title>
+    <script>
+      
+      $( document ).ready(function() {
+        $( "#btnStart" ).click(function() {
+            $("#imgCup").addClass("coffeeFade");
+          $("#counter").fadeIn("slow");
+        });
+
+      });
+    </script>
+  </head>
+  <body>
+    <div id='javaGoodness'>
+      <img id='imgCup' name='imgCup' src=samples/coffee_cup.svg>  
+      <button id='btnStart' name='btnStart'>
+        Start
+      </button>
+    <div id='counter' style='display:none;'>
+      Once the image completely loads (3 minutes) you can enjoy your beverage.<br /><br/>
+      Coming soon: A countdown timer!
+      </div>
+    </div>
+  </body>
+</html>
